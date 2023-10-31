@@ -22,7 +22,7 @@
 
 ## Homework 2
 
-&nbsp;&nbsp;&nbsp;This assignment involved simulating a 3-floor elevator control system using LEDs, buttons, and a buzzer with Arduino. By the end of this task, you'll gain experience in using button state change, implementing debouncing techniques, and coordinating multiple components to represent real-world scenarios.
+&nbsp;&nbsp;&nbsp;This assignment involved simulating a 3-floor elevator control system using LEDs, buttons, and a buzzer with Arduino. The completion of this task ensured gaining experience in using button state change, implementing debouncing techniques, and coordinating multiple components to represent real-world scenarios.
 
 
 ### Components used:
