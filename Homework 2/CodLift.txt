@@ -1,0 +1,110 @@
+const int FloorLEDpin[3] = {3, 5, 7};
+const int FloorPBpin[3] = {8, 9, 12};
+const int BuzzahPin = 11;
+int BuzzahState = -1;
+const int StatusLedpin = 2;
+bool StatusLedState = false;
+const int arriveSound = 788;
+const int travellingSound = 650;
+const int arriveSoundTime = 300;
+
+unsigned long StatusLedPeriod = 0;
+unsigned long StatusLedTime = 500;
+bool reading = false;
+bool lastReading = false;
+unsigned long lastDebounceTime = 0;
+bool buttonState = false;
+unsigned long debounceDelay = 100;
+int currentButton = -1;
+int nextFloor = -1;
+int currentFloor = -1;
+bool currentLedState = true;
+unsigned long closingTime = 4000;
+unsigned long closingPeriod = 0;
+bool closingState = true;
+
+void setup() {
+  for (int i = 0; i < 3; i++) {
+    pinMode(FloorLEDpin[i], OUTPUT);
+    pinMode(FloorPBpin[i], INPUT_PULLUP);
+  }
+  pinMode(StatusLedpin, OUTPUT);
+  pinMode(BuzzahPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void readButtonValue(int buttonPin) {
+  reading = digitalRead(buttonPin);
+  if (reading != lastReading) {
+    lastDebounceTime = millis();
+  }
+  if ((millis() - lastDebounceTime) > debounceDelay) {
+    if (reading != buttonState) {
+      buttonState = reading;
+      if (buttonState == HIGH) {
+        nextFloor = currentButton;
+        lastDebounceTime = 0;
+        reading = false;
+        lastReading = false;
+        buttonState = false;
+      }
+    }
+  }
+  lastReading = reading;
+}
+
+void loop() {
+  for (int i = 0; i < 3; i++) {
+    if (digitalRead(FloorPBpin[i]) == LOW && i != currentFloor) {
+      currentButton = i;
+    }
+  }
+  readButtonValue(FloorPBpin[currentButton]);
+
+  if (nextFloor != -1 && nextFloor != currentFloor && closingState == false) {
+    closingPeriod = millis();
+    closingState = true;
+  }
+  if (closingState == true && (millis() - closingPeriod) > closingTime / 2) {
+    currentLedState = false;
+    if ((millis() - closingPeriod) > closingTime) {
+      if (currentFloor > nextFloor) {
+        currentFloor -= 1;
+      }
+      if (currentFloor < nextFloor) {
+        currentFloor += 1;
+      }
+      if (currentFloor == nextFloor) {
+        BuzzahState = 1;
+        StatusLedState = 1;
+        StatusLedPeriod = millis();
+      }
+      closingState = false;
+      closingPeriod = 0;
+      currentLedState = true;
+    }
+  }
+
+  if (BuzzahState == 1) {
+    tone(BuzzahPin, arriveSound, arriveSoundTime);
+    BuzzahState = -1;
+  }
+
+  if (currentFloor != -1) {
+    if (currentFloor != nextFloor) {
+      tone(BuzzahPin, travellingSound);
+      if (millis() - StatusLedPeriod > StatusLedTime) {
+        StatusLedState = !StatusLedState;
+        StatusLedPeriod = millis();
+      }
+      digitalWrite(StatusLedpin, StatusLedState);
+    }
+    if (currentFloor == nextFloor) {
+      digitalWrite(StatusLedpin, HIGH);
+    }
+  } else {
+    digitalWrite(StatusLedpin, LOW);
+  }
+  Serial.println(currentFloor);
+  digitalWrite(FloorLEDpin[currentFloor], currentLedState);
+}
