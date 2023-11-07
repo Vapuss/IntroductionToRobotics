@@ -1,7 +1,8 @@
 const int buzzerpin=3;
 int OnOffsound=2500;
 int Resetsound=400;
-//de adaugat var pt buzzer : ton la reset si ton la draw
+int OnOffSoundDuration=300;
+int ResetSoundDuration=600;
 
 const int pinSW = 2;
 const int pinX = A0; 
@@ -235,12 +236,12 @@ void buttonPressed() {
       long pressDuration = releasedTime - pressedTime;
       if (pressDuration > longPressDuration) {
         Serial.println("long press");
-        tone(buzzerpin, Resetsound, 600);
+        tone(buzzerpin, Resetsound, ResetSoundDuration);
         resetLeds();
       }
       else if (pressDuration > shortPressDuration) {
         Serial.println("short press");
-        tone(buzzerpin, OnOffsound, 300);
+        tone(buzzerpin, OnOffsound, OnOffSoundDuration);
         if (currentBlinkPin == pinA) {
           ledAState = !ledAState;
         }
