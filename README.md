@@ -44,7 +44,7 @@
 
 ## Homework 3
 
-&nbsp;&nbsp;&nbsp;This week's task involved using the joystick to control the position of the 7 Segments Diplay... segment and "drawing" on the.... display ( :< ). The movement between segments
+&nbsp;&nbsp;&nbsp;This week's task involved using the joystick to control the position of the 7 Segments Diplay's... segment and "drawing" on it's.... display ( :< ). The movement between segments
 had to be natural, meaning they should jump from the current position only to neighbors, but without passing through "walls". I also added a buzzer to know when the reset and drawing took place.
 
 ### Components used:
