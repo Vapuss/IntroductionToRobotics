@@ -1,3 +1,5 @@
 -> Start/Pause button potential debounce issue or a problem with the button itself. Sometimes it has to be pressed a couple of times before it does what it's supposed to do. 
+
 -> The reset button resets the laps regardless of being in the pause state or the lap viewing mode.
+
 -> Only one lap is saved, which is overwritten every time when I press the button(Or I didnt do the reading and displaying of the saved laps correctly in the loop function).
