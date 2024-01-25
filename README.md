@@ -88,7 +88,7 @@ had to be natural, meaning they should jump from the current position only to ne
 + https://youtube.com/shorts/kZEFK3XmOcU?feature=share
 
 
-
+<details open>
 
 <summary> <h2>Extra Homework 1</h2> </summary>
 
