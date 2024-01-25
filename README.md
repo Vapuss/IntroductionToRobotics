@@ -86,3 +86,25 @@ had to be natural, meaning they should jump from the current position only to ne
 
 + ![WhatsApp Image 2023-11-14 at 23 03 29 (1)](https://github.com/Vapuss/IntroductionToRobotics/assets/92088885/41133a77-ba8c-43cd-9044-125145dc4afe)
 + https://youtube.com/shorts/kZEFK3XmOcU?feature=share
+
+
+
+
+<summary> <h2>Extra Homework 1</h2> </summary>
+
+&nbsp;&nbsp;&nbsp; The task intended for this extra homework was about making use of the Ultrasonic Sensor and the Servo motor to create a working radar, which used the Processing IDE to get a classic radar visualisation, like the one we see in movies with ships. A somewhat of a challenge was posed by the fact that I had to build a makeshift support for the US Sensor from cardboard, but it worked great in the end.
+
+### Components used:
+* Arduino Uno Board
+* Breadboard
+* Servo Motor
+* HC-SR04 Ultrasonic Sensor
+* Sensor Support
+* Jumper Cables
+
+**&nbsp;&nbsp;&nbsp;This is the homework's final form, alongside a video demonstrating its functionality:**
+
++ ![Radar1](https://github.com/Vapuss/IntroductionToRobotics/assets/92088885/e12465ea-d702-43cb-82a5-0e9615d94df3)
+
++ https://youtu.be/KNYcOJtdBZU
+
