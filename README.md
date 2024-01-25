@@ -86,7 +86,7 @@ had to be natural, meaning they should jump from the current position only to ne
 
 + ![WhatsApp Image 2023-11-14 at 23 03 29 (1)](https://github.com/Vapuss/IntroductionToRobotics/assets/92088885/41133a77-ba8c-43cd-9044-125145dc4afe)
 + https://youtube.com/shorts/kZEFK3XmOcU?feature=share
-
+</details>
 
 <details open>
 
@@ -107,4 +107,4 @@ had to be natural, meaning they should jump from the current position only to ne
 + ![Radar1](https://github.com/Vapuss/IntroductionToRobotics/assets/92088885/e12465ea-d702-43cb-82a5-0e9615d94df3)
 
 + https://youtu.be/KNYcOJtdBZU
-
+</details>
