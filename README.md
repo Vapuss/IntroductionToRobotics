@@ -108,3 +108,28 @@ had to be natural, meaning they should jump from the current position only to ne
 
 + https://youtu.be/KNYcOJtdBZU
 </details>
+
+
+<details open>
+
+<summary> <h2>Extra Homework 2</h2> </summary>
+
+&nbsp;&nbsp;&nbsp; This extra homework's idea was to create a Led Sequence Memory game. A led pattern is randomly generated and the player has to correctly repeat it, each time it is correctly remembered the pattern increases in difficulty by adding one more led to the equation. The challenging part was represented by the code, as there were many aspects that had to be correctly tackled, such as the winner/loser implementations, correct use of the buzzer, proper debouncing and the generation and the storage of the led patterns. Nevertheless, this was a very fun project :D
+
+### Components used:
+* Arduino Uno Board
+* Breadboard
+* Buzzer
+* RGB Led
+* Leds(4 - Red, Yellow, Green and Blue)
+* 330 Ohm Resistors(7)
+* Push-Buttons(4, one for each led)
+* Jumper Cables
+
+**&nbsp;&nbsp;&nbsp;This is the homework's final form, alongside a video demonstrating its functionality:**
+
++ ![1](https://github.com/Vapuss/IntroductionToRobotics/assets/92088885/1bf4c94c-f241-4267-8854-9bab4dbfb208)
+
+
++ https://youtu.be/XPCd8YHMOmY
+</details>
